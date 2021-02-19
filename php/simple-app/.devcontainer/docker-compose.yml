@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  php-simple-app:
+    build:
+      context: ../
+      dockerfile: .devcontainer/Dockerfile
+    network_mode: "host"
+    volumes:
+      - ..:/workspace:cached
+      - ..:/app
+    command: /bin/sh -c "while sleep 1000; do :; done"

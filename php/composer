@@ -1,0 +1,6 @@
+#!/bin/bash
+
+docker-compose -f /mnt/archivos/work/project/personal/_dockers-base/docker-compose.yml \
+run --name=composer --rm --no-deps --volume=`pwd`:/usr/src/app --workdir=/usr/src/app \
+php7 \
+composer $@

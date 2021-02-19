@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  node-app:
+    build:
+      context: ../
+      dockerfile: ./.devcontainer/Dockerfile
+      target: dev
+    image: node-app:dev
+    network_mode: "host"
+    volumes:
+      - ..:/workspace:cached
+      - ..:/app
+    command: /bin/sh -c "while sleep 1000; do :; done"

@@ -1,0 +1,24 @@
+/mariadb/data
+
+/phpmyadmin/sessions
+
+/postgres/data
+
+/rabbitmq/data
+
+# php
+/php/*/
+!/php/simple-app
+vendor/
+
+# nodejs
+/nodejs/*
+!/nodejs/node-app
+node_modules/
+
+# java
+*.class
+
+!.devcontainer/
+!.vscode/
+

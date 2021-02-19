@@ -1,0 +1,14 @@
+{
+	"name": "node-app",
+    "service": "node-app",
+	"dockerComposeFile": [
+        "docker-compose.yml"
+	],
+    "workspaceFolder": "/app",
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash",
+	},
+	"extensions": [
+		//
+	]
+}

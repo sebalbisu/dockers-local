@@ -1,0 +1,16 @@
+{
+	"name": "php-simple-app",
+    "service": "php-simple-app",
+	"dockerComposeFile": [
+        "docker-compose.yml"
+	],
+	"workspaceFolder": "/app",
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash",
+	},
+	"extensions": [
+		"felixfbecker.php-intellisense",
+		"felixfbecker.php-debug",
+		"neilbrayfield.php-docblocker",
+	]
+}
