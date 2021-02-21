@@ -9,8 +9,12 @@
 		"terminal.integrated.shell.linux": "/bin/bash",
 	},
 	"extensions": [
-		"felixfbecker.php-intellisense",
+		// php
+		"bmewburn.vscode-intelephense-client",
 		"felixfbecker.php-debug",
 		"neilbrayfield.php-docblocker",
+		"phproberto.vscode-php-getters-setters",
+		// phpunit
+		"calebporzio.better-phpunit",
 	]
 }

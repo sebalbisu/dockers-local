@@ -45,6 +45,8 @@ RUN printf 'xdebug.mode=debug,develop\n\
 xdebug.xdebug.cli_color=1\n\
 xdebug.start_with_request=yes\n\
 xdebug.client_port=9003\n\
+xdebug.show_exception_trace=0\n\
+xdebug.show_error_trace=0\n\
 ' >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
 # --------

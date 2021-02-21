@@ -111,16 +111,16 @@ services:
 
   # go ------------------
 
-  app-go:
-    build:
-      context: ./app-go
-      target: dev
-    image: app-go:dev
-    network_mode: "host"
-    security_opt:
-      - seccomp:unconfined
-    volumes:
-      - ./app-go/src:/go/src/app-go
+  # go:
+  #   build:
+  #     context: ./go
+  #     target: dev
+  #   image: go:dev
+  #   network_mode: "host"
+  #   security_opt:
+  #     - seccomp:unconfined
+  #   volumes:
+  #     - ./go/src:/go/src/app-go
 
   # php  ------------------
 

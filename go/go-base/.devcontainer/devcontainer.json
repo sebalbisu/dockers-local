@@ -1,0 +1,16 @@
+{
+	"name": "go-base",
+	"service": "go-base",
+	"dockerComposeFile": [
+		"docker-compose.yml"
+	],
+	"workspaceFolder": "/app",
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"go.useLanguageServer": true
+	},
+	"extensions": [
+		"golang.go",
+		"766b.go-outliner"
+	]
+}
