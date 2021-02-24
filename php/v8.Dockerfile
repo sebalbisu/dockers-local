@@ -34,6 +34,16 @@ RUN pecl install --onlyreqdeps xdebug-3.0.2 \
 RUN curl https://raw.githubusercontent.com/composer/getcomposer.org/master/web/installer | php
 RUN chmod a+x ./composer.phar | mv ./composer.phar /usr/local/bin/composer
 
+# php-cs-fixer
+RUN mkdir /usr/local/src/php-cs-fixer
+RUN composer require --working-dir=/usr/local/src/php-cs-fixer friendsofphp/php-cs-fixer
+RUN ln -s /usr/local/src/php-cs-fixer/vendor/bin/php-cs-fixer /usr/local/bin/
+
+# phpunit
+RUN mkdir /usr/local/src/phpunit
+RUN composer require --working-dir=/usr/local/src/phpunit phpunit/phpunit
+RUN ln -s /usr/local/src/phpunit/vendor/bin/phpunit /usr/local/bin/
+
 # nodejs / npm
 ARG NODE_VERSION=v15.9.0
 RUN curl https://nodejs.org/dist/${NODE_VERSION}/node-${NODE_VERSION}-linux-x64.tar.gz | tar -xz
@@ -71,13 +81,16 @@ RUN sudo chown $USER:$USER_GROUP .
 
 FROM dev-slim as dev
 
-RUN sudo apt-get update && \
-    sudo apt-get install -y \
-        zlib1g-dev libpng-dev && \
-    sudo apt-get update
+FROM dev-slim as dev
+
+RUN sudo apt update && \
+    sudo apt install -y \
+        zlib1g-dev libpng-dev \
+        libpq5 libpq-dev && \
+    sudo apt update
 
 RUN sudo pecl install --onlyreqdeps redis-5.3.3
 
-RUN sudo -E docker-php-ext-install exif gd
+RUN sudo -E docker-php-ext-install exif gd pdo_pgsql pdo_mysql
 
-RUN sudo -E docker-php-ext-enable redis
+RUN sudo -E docker-php-ext-enable redis pdo_mysql pdo_pgsql

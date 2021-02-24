@@ -1,9 +1,7 @@
 /mariadb/data
-
+/mysql/data
 /phpmyadmin/sessions
-
 /postgres/data
-
 /rabbitmq/data
 
 # php
