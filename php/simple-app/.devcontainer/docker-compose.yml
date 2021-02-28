@@ -1,11 +1,16 @@
 version: '3.7'
 services:
-  php-simple-app:
+  simple-app:
     build:
       context: ../
       dockerfile: .devcontainer/Dockerfile
-    network_mode: "host"
+    networks: [local_net]
+    ports: ["8000:8000"]
     volumes:
       - ..:/workspace:cached
       - ..:/app
     command: /bin/sh -c "while sleep 1000; do :; done"
+
+networks:
+  local_net:
+    external: true

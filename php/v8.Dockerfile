@@ -17,13 +17,13 @@ RUN mv /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
 # packages
 RUN apt update && \
     apt install -y \
-        git \
-        less \
-        zip \
-        curl \
-        libcurl4-openssl-dev \
-        libxml2-dev \
-        nano && \
+    git \
+    less \
+    zip \
+    curl \
+    libcurl4-openssl-dev \
+    libxml2-dev \
+    nano && \
     apt update 
 
 # extensions
@@ -52,12 +52,13 @@ RUN ln -s /usr/local/src/node/bin/* /usr/local/bin/
 
 # config
 RUN printf 'xdebug.mode=debug,develop\n\
-xdebug.xdebug.cli_color=1\n\
-xdebug.start_with_request=yes\n\
-xdebug.client_port=9003\n\
-xdebug.show_exception_trace=0\n\
-xdebug.show_error_trace=0\n\
-' >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+    xdebug.xdebug.cli_color=1\n\
+    xdebug.start_with_request=yes\n\
+    xdebug.client_port=9003\n\
+    xdebug.show_exception_trace=0\n\
+    xdebug.show_error_trace=0\n\
+    xdebug.log_level=0\n\
+    ' >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
 # --------
 
@@ -81,12 +82,10 @@ RUN sudo chown $USER:$USER_GROUP .
 
 FROM dev-slim as dev
 
-FROM dev-slim as dev
-
 RUN sudo apt update && \
     sudo apt install -y \
-        zlib1g-dev libpng-dev \
-        libpq5 libpq-dev && \
+    zlib1g-dev libpng-dev \
+    libpq5 libpq-dev && \
     sudo apt update
 
 RUN sudo pecl install --onlyreqdeps redis-5.3.3

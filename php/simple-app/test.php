@@ -1,7 +1,7 @@
 <?php
 
-echo "hola";
+echo 'hola';
 
-function test(int $a){
-
+function test(int $a)
+{
 }

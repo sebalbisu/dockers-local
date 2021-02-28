@@ -60,8 +60,7 @@ services:
     ports: ["8011:80"]
 
   redis:
-    image: redis:6.0.9-buster
-    command: "redis-server --port 6379" 
+    image: redis:alpine
     restart: unless-stopped
     networks: [local_net]
 
@@ -93,11 +92,11 @@ services:
     
   nvm:
     build:
-      context: ./nodejs/_nvm
-    image: nvm
+      context: ./nodejs/
+      dockerfile: ./nvm.Dockerfile
+      target: dev
+    image: nvm:dev
     networks: [local_net]
-    volumes:
-      - ./nodejs/_nvm/data:/home/nvm
 
   # go ------------------
 

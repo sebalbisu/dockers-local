@@ -1,20 +1,19 @@
 {
-	"name": "php-simple-app",
-    "service": "php-simple-app",
-	"dockerComposeFile": [
-        "docker-compose.yml"
-	],
-	"workspaceFolder": "/app",
-	"settings": {
-		"terminal.integrated.shell.linux": "/bin/bash",
-	},
-	"extensions": [
-		// php
-		"bmewburn.vscode-intelephense-client",
-		"felixfbecker.php-debug",
-		"neilbrayfield.php-docblocker",
-		"phproberto.vscode-php-getters-setters",
-		// phpunit
-		"calebporzio.better-phpunit",
-	]
+    "name": "simple-app",
+    "service": "simple-app",
+    "dockerComposeFile": [
+        "docker-compose.yml",
+    ],
+    "workspaceFolder": "/app",
+    "settings": {
+        // .vscode/settings.json
+    },
+    "extensions": [
+        "bmewburn.vscode-intelephense-client",
+        "felixfbecker.php-debug",
+        "neilbrayfield.php-docblocker",
+        "phproberto.vscode-php-getters-setters",
+        "junstyle.php-cs-fixer",
+        "calebporzio.better-phpunit",
+    ]
 }

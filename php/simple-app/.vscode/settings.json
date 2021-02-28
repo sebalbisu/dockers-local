@@ -1,0 +1,27 @@
+{
+    "editor.formatOnSaveMode": "file", // for multi-user projects change to "modifications"
+    "editor.formatOnType": true,
+    "editor.formatOnSave": true,
+    "outline.showVariables": false,
+    "outline.showFunctions": false,
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "[php]": {
+        "editor.defaultFormatter": "junstyle.php-cs-fixer"
+    },
+    "php.suggest.basic": false,
+    "php.validate.executablePath": "/usr/local/bin/php",
+    "php.validate.run": "onType",
+    "php-cs-fixer.executablePath": "php-cs-fixer",
+    "php-cs-fixer.executablePathWindows": "", //eg: php-cs-fixer.bat
+    "php-cs-fixer.onsave": true,
+    "php-cs-fixer.rules": "@PhpCsFixer", // or standard: @Symfony a bit more permissive
+    "php-cs-fixer.config": ".php_cs;.php_cs.dist;.devcontainer/.cs.php;.devcontainer/.php_cs",
+    "php-cs-fixer.allowRisky": false,
+    "php-cs-fixer.pathMode": "override",
+    "php-cs-fixer.exclude": [],
+    "php-cs-fixer.autoFixByBracket": true,
+    "php-cs-fixer.autoFixBySemicolon": true,
+    "php-cs-fixer.formatHtml": false,
+    "php-cs-fixer.documentFormattingProvider": true,
+    "php-docblocker.qualifyClassNames": true,
+}
